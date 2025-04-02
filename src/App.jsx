@@ -21,7 +21,8 @@ const App = () => {
   
   const handleDelete= async(id)=>{
     try{
-      await axios.delete(`https://todo-backend-vzcb.onrender.com/api/todos${id}`)
+      await axios.delete(`https://todo-backend-vzcb.onrender.com/api/todos/${id}`)
+
       setTodos(todos.filter((todo)=>todo._id !==id));
     }
     catch(err){
