@@ -4,7 +4,7 @@ import Navbar from "./components/navbar/Navbar";
 import TodoForm from "./components/todoForm/TodoForm";
 import TodoTable from "./components/todotable/TodoTable";
 import Welcome from "./components/wellCome/Wellcome";
-
+import TicTacToe from "./components/tictactoe/TicTacToe"
 const App = () => {
   const [todos, setTodos] = useState([]);
 
@@ -27,6 +27,7 @@ const App = () => {
             <TodoForm addTodo={addTodo} />
             <TodoTable todos={todos} onDelete={handleDelete} />
           </>} />
+          <Route path="/game" element={<TicTacToe/>}/>
         </Routes>
       </div>
     </Router>

@@ -39,8 +39,8 @@ const Welcome = () => {
 
       <div className={styles.section}>
         <h2>Contact</h2>
-          <p>Email: <a href="mailto:saurabh@example.com">saurabh@example.com</a></p>
-         <p>LinkedIn: <a href="https://linkedin.com/in/saurabhsingh" target="_blank" rel="noopener noreferrer">linkedin.com/in/saurabhsingh</a></p>
+          <p>Email: <a href="mailto:saurabh123mahi@gmail.com">Email</a></p>
+         <p>LinkedIn: <a href="https://linkedin.com/in/singh-saurabh07" target="_blank" rel="noopener noreferrer">linkedin.</a></p>
           <p>GitHub: <a href="https://github.com/Saurabh63948" target="_blank" rel="noopener noreferrer">github.com/Saurabh63948</a></p>
       </div>
     </div>
