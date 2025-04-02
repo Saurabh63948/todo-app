@@ -1,18 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import styles from "./Navbar.module.css"; // ✅ Ensure Correct Import
+import styles from "./Navbar.module.css";
 
 const Navbar = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
-    <nav className={styles.navbar}>
-      <h2>My Portfolio</h2>
-      <div className={styles.navLinks}> {/* ✅ Correct Class Name */}
-        <Link to="/">Home</Link>
-        <Link to="/todo">Todo</Link>
-        <Link to="/contact">Contact</Link>
-        <Link to="/game">Game</Link>
-      </div>
-    </nav>
+    <>
+      {/* ✅ Overlay (Jab Menu Open Ho) */}
+      {menuOpen && <div className={styles.overlay} onClick={() => setMenuOpen(false)}></div>}
+
+      <nav className={styles.navbar}>
+        <h2 className={styles.logo}>My Portfolio</h2>
+
+        {/* ✅ Hamburger Button */}
+        <div className={styles.hamburger} onClick={() => setMenuOpen(!menuOpen)}>
+          ☰
+        </div>
+
+        {/* ✅ Navigation Links (Sidebar Style) */}
+        <div className={`${styles.navLinks} ${menuOpen ? styles.active : ""}`}>
+          <Link to="/" onClick={() => setMenuOpen(false)}>Home</Link>
+          <Link to="/todo" onClick={() => setMenuOpen(false)}>Todo</Link>
+          <Link to="/contact" onClick={() => setMenuOpen(false)}>Contact</Link>
+          <Link to="/game" onClick={() => setMenuOpen(false)}>Game</Link>
+        </div>
+      </nav>
+    </>
   );
 };
 
