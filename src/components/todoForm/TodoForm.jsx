@@ -8,11 +8,12 @@ const TodoForm = ({ addTodo }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (!todoName || !todoDate) {
-      return alert('Fill all the inputs');
+    // Prevent adding empty spaces
+    if (!todoName.trim() || !todoDate) {
+      return alert('⚠️ Please fill in both the todo name and date.');
     }
 
-    const newTodo = { todoName, todoDate };
+    const newTodo = { todoName: todoName.trim(), todoDate };
     addTodo(newTodo);
     
     // Clear input fields after submission
@@ -21,28 +22,27 @@ const TodoForm = ({ addTodo }) => {
   };
 
   return (
-
-      <>
-     
     <form onSubmit={handleSubmit} className={styles.formContainer}>
+      <h1 className={styles.title}>📝 ADD YOUR TODO HERE!</h1>
 
-    <h1>ADD YOUR TODO HERE!!</h1>
       <input
         type="text"
         value={todoName}
-        placeholder="Enter your todo here"
+        placeholder="Enter your todo here..."
         onChange={(e) => setTodoName(e.target.value)}
         className={styles.inputField}
+        autoFocus
       />
+      
       <input
         type="date"
         value={todoDate}
         onChange={(e) => setTodoDate(e.target.value)}
         className={styles.inputField}
       />
-      <button type="submit" className={styles.submitButton}>ADD</button>
+      
+      <button type="submit" className={styles.submitButton}>➕ ADD</button>
     </form>
-    </>
   );
 };
 

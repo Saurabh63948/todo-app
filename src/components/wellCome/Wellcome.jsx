@@ -1,14 +1,14 @@
 import React from "react";
-import styles from "./Wellcome.module.css"
+import styles from "./Wellcome.module.css";
 
 const Welcome = () => {
   return (
     <div className={styles.container}>
       <div className={styles.profile}>
-      <img  src="/1.png" alt="Profile" className={styles.profileImage} />
+        <img src="/1.png" alt="Profile" className={styles.profileImage} />
 
-        <h1>Saurabh Singh</h1>
-        <p>Software Engineer | Frontend Developer</p>
+        <h1 className={styles.name}>Saurabh Singh</h1>
+        <p className={styles.jobTitle}>Software Engineer | Frontend Developer</p>
       </div>
 
       <div className={styles.section}>
@@ -18,7 +18,7 @@ const Welcome = () => {
 
       <div className={styles.section}>
         <h2>Skills</h2>
-        <ul>
+        <ul className={styles.skillsList}>
           <li>React.js</li>
           <li>JavaScript (ES6+)</li>
           <li>Node.js & Express</li>
@@ -29,7 +29,7 @@ const Welcome = () => {
 
       <div className={styles.section}>
         <h2>Projects</h2>
-        <ul>
+        <ul className={styles.projectsList}>
           <li>Social Media App (React, Node.js, MySQL)</li>
           <li>Bookstore App</li>
           <li>Myntra Clone (Frontend)</li>
@@ -39,9 +39,9 @@ const Welcome = () => {
 
       <div className={styles.section}>
         <h2>Contact</h2>
-          <p>Email: <a href="mailto:saurabh123mahi@gmail.com">Email</a></p>
-         <p>LinkedIn: <a href="https://linkedin.com/in/singh-saurabh07" target="_blank" rel="noopener noreferrer">linkedin.</a></p>
-          <p>GitHub: <a href="https://github.com/Saurabh63948" target="_blank" rel="noopener noreferrer">github.com/Saurabh63948</a></p>
+        <p>Email: <a className={styles.link} href="mailto:saurabh123mahi@gmail.com">saurabh123mahi@gmail.com</a></p>
+        <p>LinkedIn: <a className={styles.link} href="https://linkedin.com/in/singh-saurabh07" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
+        <p>GitHub: <a className={styles.link} href="https://github.com/Saurabh63948" target="_blank" rel="noopener noreferrer">GitHub</a></p>
       </div>
     </div>
   );
