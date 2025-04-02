@@ -24,7 +24,7 @@ const TodoTable = ({ todos,onDelete }) => {
               <td>{todo.todoName}</td>
               <td>{todo.todoDate}</td>
               <td>
-                <button className={styles.deleteButton} onClick={()=>onDelete(index)}>Delete</button>
+                <button className={styles.deleteButton} onClick={()=>onDelete(todo._id)}>Delete</button>
               </td>
             </tr>
           ))}

@@ -19,16 +19,15 @@ const App = () => {
   };
 
   
-  const handleDelete= async(id)=>{
-    try{
-      await axios.delete(`https://todo-backend-vzcb.onrender.com/api/todos/${id}`)
+  const handleDelete = async (id) => {
+    setTodos((prevTodos) => prevTodos.filter((todo) => todo._id !== id)); // UI se turant remove
+    try {
+        await axios.delete(`https://todo-backend-vzcb.onrender.com/api/todos/${id}`);
+    } catch (err) {
+        console.log("Delete error:", err);
+    }
+};
 
-      setTodos(todos.filter((todo)=>todo._id !==id));
-    }
-    catch(err){
-      console.log(err)
-    }
-  }
   
   useEffect(()=>{
     
