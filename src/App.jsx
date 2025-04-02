@@ -6,53 +6,44 @@ import TodoForm from "./components/todoForm/TodoForm";
 import TodoTable from "./components/todotable/TodoTable";
 import Welcome from "./components/wellCome/Wellcome";
 import TicTacToe from "./components/tictactoe/TicTacToe"
+
 const App = () => {
   const [todos, setTodos] = useState([]);
 
+  const fetchTodos = async () => {
+    try {
+      const response = await axios.get("https://todo-backend-vzcb.onrender.com/api/todos");
+      setTodos(response.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    fetchTodos();
+  }, []);
+
   const addTodo = async (newTodo) => {
     try {
-      const response = await axios.post('https://todo-backend-vzcb.onrender.com/api/todos', newTodo);
-      setTodos([...todos, response.data]); 
+      await axios.post('https://todo-backend-vzcb.onrender.com/api/todos', newTodo);
+      fetchTodos(); // Fetch updated todos
     } catch (error) {
       console.error('Error adding todo:', error);
     }
   };
 
-  
   const handleDelete = async (id) => {
     setTodos((prevTodos) => prevTodos.filter((todo) => todo._id !== id)); // UI se turant remove
     try {
-        await axios.delete(`https://todo-backend-vzcb.onrender.com/api/todos/${id}`);
+      await axios.delete(`https://todo-backend-vzcb.onrender.com/api/todos/${id}`);
+      fetchTodos(); // Fetch updated todos
     } catch (err) {
-        console.log("Delete error:", err);
+      console.log("Delete error:", err);
     }
-};
-
-  
-  useEffect(()=>{
-    
-    const fetchTodos = async () =>{
-   
-      try{
-       const response= await axios.get("https://todo-backend-vzcb.onrender.com/api/todos")
-         setTodos(response.data)
-      }
-       catch(error){
-           console.log(error)
-       }
-    }
-
-   fetchTodos();
-
-  },[])
-
-
-
-
-
+  };
 
   return (
-    <Router> {/* ✅ React Router Wrap */}
+    <Router>
       <Navbar />
       <div className="content">
         <Routes>
@@ -61,7 +52,7 @@ const App = () => {
             <TodoForm addTodo={addTodo} />
             <TodoTable todos={todos} onDelete={handleDelete} />
           </>} />
-          <Route path="/game" element={<TicTacToe/>}/>
+          <Route path="/game" element={<TicTacToe />} />
         </Routes>
       </div>
     </Router>
