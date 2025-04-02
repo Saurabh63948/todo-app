@@ -6,7 +6,7 @@ import TodoForm from "./components/todoForm/TodoForm";
 import TodoTable from "./components/todotable/TodoTable";
 import Welcome from "./components/wellCome/Wellcome";
 import TicTacToe from "./components/tictactoe/TicTacToe"
-import ChatBox from "./components/chatbox/Chatbox";
+import ChatBox from "./components/chatbox/ChatBox";
 const App = () => {
   const [todos, setTodos] = useState([]);
 
