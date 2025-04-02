@@ -1,7 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './TodoTable.module.css'; 
+import { use } from 'react';
 
-const TodoTable = ({ todos }) => {
+const TodoTable = ({ todos,onDelete }) => {
+
+  
+
+
+
   return (
     <div className={styles.tableContainer}>
       <table className={styles.table}>
@@ -18,7 +24,7 @@ const TodoTable = ({ todos }) => {
               <td>{todo.todoName}</td>
               <td>{todo.todoDate}</td>
               <td>
-                <button className={styles.deleteButton}>Delete</button>
+                <button className={styles.deleteButton} onClick={()=>onDelete(index)}>Delete</button>
               </td>
             </tr>
           ))}

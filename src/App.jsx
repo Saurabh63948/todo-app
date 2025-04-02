@@ -11,6 +11,11 @@ const App = () => {
   const addTodo = (newTodo) => {
     setTodos((prev) => [...prev, newTodo]);
   };
+  const handleDelete=(index)=>{
+    setTodos((prev)=>prev.filter((_,i)=> i!==index))
+  }
+
+
 
   return (
     <Router> {/* ✅ React Router Wrap */}
@@ -20,7 +25,7 @@ const App = () => {
           <Route path="/" element={<Welcome />} />
           <Route path="/todo" element={<>
             <TodoForm addTodo={addTodo} />
-            <TodoTable todos={todos} />
+            <TodoTable todos={todos} onDelete={handleDelete} />
           </>} />
         </Routes>
       </div>

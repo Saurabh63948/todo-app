@@ -1,3 +1,4 @@
+/* ✅ Full Page Background */
 .container {
   background: linear-gradient(to right, #2c3e50, #4ca1af); /* Gradient Background */
   min-height: 100vh;
@@ -6,40 +7,74 @@
   align-items: center;
   justify-content: center;
   color: white;
-  font-family: Arial, sans-serif;
+  font-family: "Poppins", sans-serif;
   padding: 20px;
-  margin-top: 60px;
+  margin-top: 80px;
+  text-align: center;
 }
 
+/* ✅ Profile Image Section */
 .profile {
   text-align: center;
   margin-bottom: 20px;
 }
 
 .profileImage {
-  width: 100px;
-  height: 100px;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
-  border: 3px solid white;
+  border: 4px solid white;
+  transition: transform 0.3s ease-in-out; /* ✅ Hover effect ke liye */
 }
 
+.profileImage:hover {
+  transform: scale(1.1);
+}
+
+/* ✅ Section Styling */
 .section {
-  background: rgba(255, 255, 255, 0.1); /* Slightly Transparent Box */
+  background: rgba(255, 255, 255, 0.15); /* Slightly Transparent Box */
   padding: 20px;
-  border-radius: 10px;
+  border-radius: 12px;
   width: 80%;
-  max-width: 600px;
+  max-width: 500px;
   text-align: center;
-  margin: 10px 0;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  margin: 12px 0;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(8px); /* ✅ Blur effect for modern glassmorphism look */
+  transition: transform 0.3s ease-in-out;
 }
 
+/* ✅ Hover effect for Section */
+.section:hover {
+  transform: scale(1.05);
+}
+
+/* ✅ Links Styling */
 a {
   color: #f0f0f0;
   text-decoration: none;
   font-weight: bold;
+  transition: color 0.3s ease-in-out;
 }
 
 a:hover {
   color: #ffcc00;
+  text-decoration: underline;
+}
+
+/* ✅ Responsive Design */
+@media (max-width: 600px) {
+  .profileImage {
+    width: 100px;
+    height: 100px;
+  }
+
+  .section {
+    width: 90%;
+  }
+
+  .container {
+    padding: 90px;
+  }
 }

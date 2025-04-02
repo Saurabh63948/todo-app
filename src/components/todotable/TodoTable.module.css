@@ -3,41 +3,68 @@
   justify-content: center;
   align-items: center;
   margin-top: 20px;
+  overflow-x: auto; /* ✅ Table ko horizontal scroll dene ke liye */
 }
 
+/* ✅ Table Improvements */
 .table {
-  width: 80%;
+  width: 90%;
+  max-width: 1000px; /* ✅ Large screens pe limit */
   border-collapse: collapse;
-  background-color: #f8f9fa;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   overflow: hidden;
 }
 
+/* ✅ Table Headers */
 th, td {
   padding: 12px;
   text-align: left;
   border-bottom: 1px solid #ddd;
+  transition: background 0.3s ease-in-out; /* ✅ Smooth hover effect */
 }
 
 th {
   background-color: #007bff;
   color: white;
+  font-size: 16px;
+  text-transform: uppercase;
 }
 
+/* ✅ Row hover effect */
 tr:hover {
-  background-color: #f1f1f1;
+  background-color: #f8f9fa;
 }
 
+/* ✅ Delete Button Styling */
 .deleteButton {
-  background-color: red;
+  background-color: #dc3545;
   color: white;
   border: none;
   padding: 8px 12px;
   border-radius: 5px;
   cursor: pointer;
+  transition: background 0.3s ease-in-out;
 }
 
 .deleteButton:hover {
-  background-color: darkred;
+  background-color: #a71d2a;
+}
+
+/* ✅ Responsive Design */
+@media (max-width: 768px) {
+  .table {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  th, td {
+    padding: 10px;
+  }
+
+  .deleteButton {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
 }
