@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import { io } from "socket.io-client";
 import styles from "./ChatBox.module.css";
 
-const socket = io("http://localhost:5000"); // ✅ Backend ka URL
+const socket = io("https://todo-backend-vzcb.onrender.com"); // ✅ Updated to deployed backend URL
 
 const ChatBox = () => {
   const [messages, setMessages] = useState([]);
