@@ -1,26 +1,19 @@
-/* ✅ Main Container */
+/* General container styles */
 .container {
-  max-width: 800px;
-  margin: 40px auto;
-  padding: 20px;
-  text-align: center;
-  background: #ffffff;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-  font-family: Arial, sans-serif;
-  min-height: 100vh;  /* Ensures content is always visible */
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Centers the content properly */
   align-items: center;
-  margin-top: 750px;
+  justify-content: flex-start; /* Change from center to flex-start */
+  min-height: 100vh; /* Ensures full screen height */
+  padding-top: 590px; /* Adjust this value as needed */
+  box-sizing: border-box;
+  background-color: #f0f0f0;
 }
 
-/* ✅ Profile Section */
+
+/* Profile section */
 .profile {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  text-align: center;
   margin-bottom: 20px;
 }
 
@@ -28,87 +21,82 @@
   width: 120px;
   height: 120px;
   border-radius: 50%;
+  object-fit: cover;
   border: 3px solid #007bff;
-  margin-bottom: 10px;
 }
 
 .name {
-  font-size: 2rem;
+  font-size: 24px;
   font-weight: bold;
-  margin: 0;
-  color: #333;
+  margin-top: 10px;
 }
 
 .jobTitle {
-  font-size: 1.2rem;
+  font-size: 16px;
   color: #555;
 }
 
-/* ✅ Sections */
+/* Section styling */
 .section {
-  width: 100%; /* Fix width for consistency */
-  margin-top: 20px;
-  padding: 15px;
-  background: #f8f9fa;
-  border-radius: 8px;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  width: 90%; /* Responsive width */
+  max-width: 600px; /* Limit max width */
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
 }
 
-/* ✅ Lists */
-.skillsList, .projectsList {
+.section h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* Skills and projects list */
+.skillsList,
+.projectsList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
   list-style: none;
   padding: 0;
 }
 
-.skillsList li, .projectsList li {
-  font-size: 1.1rem;
-  margin: 5px 0;
+.skillsList li,
+.projectsList li {
+  background: #007bff;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 5px;
+  font-size: 14px;
+  transition: 0.3s;
 }
 
-/* ✅ Links */
+.skillsList li:hover,
+.projectsList li:hover {
+  background: #0056b3;
+}
+
+/* Links */
 .link {
   color: #007bff;
   text-decoration: none;
-  font-weight: bold;
-  transition: 0.3s ease;
 }
 
 .link:hover {
   text-decoration: underline;
-  color: #0056b3;
 }
 
-/* ✅ Fix Navbar Overlapping */
-nav {
-  position: fixed;
-  width: 100%;
-  top: 0;
-  left: 0;
-  z-index: 1000; /* Ensures navbar stays on top */
-}
-
-/* ✅ Responsive Design */
+/* Responsive design */
 @media (max-width: 768px) {
   .container {
-    width: 90%;
-    padding: 15px;
-    margin-top: 356px;
-  }
-
-  .profileImage {
-    width: 100px;
-    height: 100px;
-  }
-
-  .name {
-    font-size: 1.8rem;
-  }
-
-  .jobTitle {
-    font-size: 1rem;
+    justify-content: flex-start;
+    padding-top: 590px;
   }
 
   .section {
-    padding: 10px;
+    padding: 15px;
   }
 }

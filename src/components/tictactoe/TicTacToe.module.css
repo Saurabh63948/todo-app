@@ -1,19 +1,16 @@
 /* Main game container */
 .gameContainer {
-  
   text-align: center;
   font-family: Arial, sans-serif;
   background: linear-gradient(135deg, #6dd5ed, #2193b0);
   min-height: 100vh;
-  display: flex
-;
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   color: white;
-  /* padding: 390px; */
-  padding-left: 200px;
-  padding-right: 200px;
+  padding: 5vh 5vw; /* Responsive padding */
+  margin-top: 200px;
 }
 
 /* Title */
@@ -26,19 +23,20 @@
 /* Board (responsive) */
 .board {
   display: grid;
-  grid-template-columns: repeat(3, minmax(80px, 120px));
-  gap: 10px;
+  grid-template-columns: repeat(3, minmax(70px, 1fr)); /* Adjust based on screen */
+  gap: 8px;
   margin: 20px auto;
   padding: 10px;
   background: rgba(255, 255, 255, 0.2);
   border-radius: 10px;
   backdrop-filter: blur(5px);
+  width: 90vw; /* Responsive width */
+  max-width: 400px; /* Limit max width */
 }
 
 /* Individual cell */
 .cell {
-  width: 100px;
-  height: 100px;
+  aspect-ratio: 1; /* Maintain square shape */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -99,4 +97,35 @@
 @keyframes fadeOut {
   from { opacity: 1; }
   to { opacity: 0; }
+}
+
+/* 🔹 Responsive Design */
+
+/* For small screens (Mobile) */
+@media (max-width: 400px) {
+  .title {
+    font-size: 2rem;
+  }
+  
+  .board {
+    width: 80vw; /* Adjust board width */
+    max-width: 300px;
+  }
+
+  .cell {
+    font-size: 1.8rem;
+  }
+
+  .restartButton {
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+}
+
+/* For Tablets */
+@media (max-width: 900px) {
+  .board {
+    width: 70vw;
+    max-width: 350px;
+  }
 }
