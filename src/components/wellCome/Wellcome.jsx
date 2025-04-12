@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./Wellcome.module.css";
+import { Link } from 'react-router-dom';
 
 const Welcome = () => {
   return (
@@ -31,9 +32,12 @@ const Welcome = () => {
         <h2>Projects</h2>
         <ul className={styles.projectsList}>
           <li>Social Media App (React, Node.js, MySQL)</li>
-          <li>Bookstore App</li>
+          <li><a href="https://bookstore-frontend-green.vercel.app/" style={{ textDecoration: "none", color:"white" }}>Bookstore App</a></li>
           <li>Myntra Clone (Frontend)</li>
-          <li>To-Do App</li>
+          <li> <Link to="/todo" style={{ textDecoration: "none", color: "white" }}>
+                To-Do App
+               </Link>
+          </li>
         </ul>
       </div>
 
