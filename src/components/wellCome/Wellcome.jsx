@@ -6,7 +6,7 @@ const Welcome = () => {
   return (
     <div className={styles.container}>
       <div className={styles.profile}>
-        <img src="/1.png" alt="Profile" className={styles.profileImage} />
+        <img src="/2.png" alt="Profile" className={styles.profileImage} />
 
         <h1 className={styles.name}>Saurabh Singh</h1>
         <p className={styles.jobTitle}>Software Engineer | Frontend Developer</p>
