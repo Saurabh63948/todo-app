@@ -107,29 +107,39 @@ const Welcome = () => {
     element.classList.remove(styles.pdfMode)
     setIsDownloading(false)
   }
+    
 }
 
 
   const skills = {
-    frontend: [
-      { name: "React.js", level: 95 },
-      { name: "Next.js", level: 88 },
-      { name: "JavaScript (ES6+)", level: 92 },
-      { name: "TypeScript", level: 85 },
-      { name: "Tailwind CSS", level: 90 },
-    ],
-    mobile: [
-      { name: "React Native", level: 88 },
-      { name: "Expo", level: 85 },
-      { name: "Android APK Build", level: 80 },
-    ],
-    backend: [
-      { name: "Node.js & Express", level: 82 },
-      { name: "MySQL", level: 78 },
-      { name: "REST APIs", level: 85 },
-      { name: "Git & GitHub", level: 90 },
-    ],
-  }
+  frontend: [
+    { name: "React.js", level: 95 },
+    { name: "Next.js", level: 88 },
+    { name: "JavaScript (ES6+)", level: 92 },
+    { name: "TypeScript", level: 85 },
+    { name: "Tailwind CSS", level: 90 },
+  ],
+  mobile: [
+    { name: "React Native", level: 88 },
+    { name: "Expo", level: 85 },
+    { name: "Android APK Build", level: 80 },
+  ],
+  backend: [
+    { name: "Node.js & Express", level: 82 },
+    { name: "MySQL", level: 78 },
+    { name: "REST APIs", level: 85 },
+    { name: "Git & GitHub", level: 90 },
+  ],
+  tools: [
+    { name: "GitHub", level: 90 },
+    { name: "Postman", level: 85 },
+    { name: "Clerk Auth", level: 80 },
+    { name: "Neon DB", level: 78 },
+    { name: "Drizzle ORM", level: 80 },
+  ],
+};
+
+  
 
   const projects = [
     {
@@ -162,11 +172,11 @@ const Welcome = () => {
       tech: ["React", "Redux", "CSS"],
       liveUrl: "https://clone-client-myntra.vercel.app/",
     },
-    {
-      title: "To-Do Mobile App",
-      description: "Cross-platform task management app with categories and reminders.",
-      tech: ["React Native", "AsyncStorage"],
-    },
+    // {
+    //   title: "To-Do Mobile App",
+    //   description: "Cross-platform task management app with categories and reminders.",
+    //   tech: ["React Native", "AsyncStorage"],
+    // },
   ]
 
   return (
