@@ -107,8 +107,13 @@ const Welcome = () => {
     element.classList.remove(styles.pdfMode)
     setIsDownloading(false)
   }
+    
 }
-const skills = {
+
+
+
+  const skills = {
+
   frontend: [
     { name: "React.js", level: 95 },
     { name: "Next.js", level: 88 },
@@ -167,11 +172,11 @@ const skills = {
       tech: ["React", "Redux", "CSS"],
       liveUrl: "https://clone-client-myntra.vercel.app/",
     },
-    {
-      title: "To-Do Mobile App",
-      description: "Cross-platform task management app with categories and reminders.",
-      tech: ["React Native", "AsyncStorage"],
-    },
+    // {
+    //   title: "To-Do Mobile App",
+    //   description: "Cross-platform task management app with categories and reminders.",
+    //   tech: ["React Native", "AsyncStorage"],
+    // },
   ]
 
   return (
