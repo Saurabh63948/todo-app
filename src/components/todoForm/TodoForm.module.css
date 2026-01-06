@@ -1,77 +1,91 @@
-/* ✅ Main Form Container */
-.formContainer {    display: flex
-  ;
-      flex-direction: column;
-      align-items: center;
-      background-color: #f8f9fa;
-      padding: 80px;
-      border-radius: 10px;
-      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-      width: 51%;
-      max-width: 500px;
-      margin: 100px auto;
-      margin-top: 193px;
-  }
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--card-bg);
+  padding: 40px 30px;
+  border-radius: 12px;
+  box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px;
+  margin: 20px auto;
+  transition: all 0.3s ease;
+}
 
-
-/* ✅ Form Title */
 .title {
   font-size: 1.8rem;
-  font-weight: bold;
-  color: #333;
-  margin-bottom: 15px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 30px;
   text-align: center;
 }
 
-/* ✅ Input Fields */
 .inputField {
-  width: 90%;
-  padding: 12px;
+  width: 100%;
+  padding: 14px;
   margin: 10px 0;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  border: 2px solid var(--secondary);
+  border-radius: 8px;
   font-size: 16px;
-  transition: border-color 0.3s ease-in-out;
+  background: var(--bg);
+  color: var(--text);
+  transition: border-color 0.3s ease;
 }
 
 .inputField:focus {
-  border-color: #007bff;
+  border-color: var(--primary);
   outline: none;
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
 }
 
-/* ✅ Button Styling */
 .submitButton {
-  background-color: #007bff;
+  background: var(--primary);
   color: white;
   border: none;
-  padding: 12px 15px;
-  border-radius: 5px;
+  padding: 14px 20px;
+  border-radius: 8px;
   font-size: 16px;
+  font-weight: 600;
   cursor: pointer;
   width: 100%;
-  margin-top: 10px;
-  transition: background 0.3s ease-in-out, transform 0.2s ease;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.3s ease;
 }
 
 .submitButton:hover {
-  background-color: #0056b3;
-  transform: scale(1.05);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
 }
 
-/* ✅ Responsive Design */
+.submitButton:active {
+  transform: translateY(0);
+}
+
 @media (max-width: 768px) {
   .formContainer {
-    width: 80%;
-    padding: 15px;
+    padding: 30px 20px;
+    margin: 15px;
+  }
+
+  .title {
+    font-size: 1.5rem;
   }
 
   .inputField {
-    width: 100%;
-    font-size: 14px;
+    padding: 12px;
   }
 
   .submitButton {
-    font-size: 14px;
+    padding: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .formContainer {
+    padding: 20px 15px;
   }
 }

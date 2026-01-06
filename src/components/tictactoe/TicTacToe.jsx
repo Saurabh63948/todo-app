@@ -7,7 +7,6 @@ const TicTacToe = () => {
   const [winningCells, setWinningCells] = useState([]);
   const [isFading, setIsFading] = useState(false);
 
-  // Function to check for a winner
   const checkWinner = (squares) => {
     const winningCombos = [
       [0, 1, 2], [3, 4, 5], [6, 7, 8],
@@ -23,7 +22,6 @@ const TicTacToe = () => {
     return null;
   };
 
-  // Check for winner or draw
   const result = checkWinner(board);
   const winner = result ? result.winner : null;
   const isDraw = !winner && board.every(cell => cell !== null);
@@ -50,30 +48,41 @@ const TicTacToe = () => {
       setIsXNext(true);
       setWinningCells([]);
       setIsFading(false);
-    }, 500);
+    }, 300);
+  };
+
+  const getStatusMessage = () => {
+    if (winner) return `🎉 Winner: ${winner}!`;
+    if (isDraw) return "🤝 It's a Draw!";
+    return `Next Player: ${isXNext ? "X" : "O"}`;
   };
 
   return (
     <div className={styles.gameContainer}>
       <h1 className={styles.title}>Tic-Tac-Toe</h1>
+      
+      <div className={styles.statusContainer}>
+        <p className={styles.status}>{getStatusMessage()}</p>
+      </div>
 
       <div className={`${styles.board} ${isFading ? styles.fadeOut : ""}`}>
         {board.map((cell, index) => (
-          <div 
+          <button 
             key={index} 
             className={`${styles.cell} ${winningCells.includes(index) ? styles.winningCell : ""}`} 
             onClick={() => handleClick(index)}
+            aria-label={`Cell ${index + 1}, ${cell || 'empty'}`}
           >
             {cell}
-          </div>
+          </button>
         ))}
       </div>
 
-      <p className={styles.status}>
-        {winner ? `Winner: ${winner} 🎉` : isDraw ? "It's a Draw! 😃" : `Next Player: ${isXNext ? "X" : "O"}`}
-      </p>
-
-      <button className={styles.restartButton} onClick={resetGame}>Restart</button>
+      <div className={styles.controls}>
+        <button className={styles.restartButton} onClick={resetGame}>
+          Restart Game
+        </button>
+      </div>
     </div>
   );
 };

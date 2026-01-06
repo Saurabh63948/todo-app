@@ -1,4 +1,4 @@
-/* ✅ Chat Container */
+/* Chat Container */
 .chatContainer {
   width: 100%;
   max-width: 400px;
@@ -16,19 +16,19 @@
   transition: background 0.3s ease-in-out;
 }
 
-/* ✅ Dark Mode */
+/* Dark Mode */
 .dark {
   background: #1e1e1e;
   color: white;
 }
 
-/* ✅ Page Background */
+/* Page Background */
 body {
   background: #f0f2f5;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+
   margin: 0;
   transition: background 0.3s ease-in-out;
 }
@@ -37,7 +37,7 @@ body {
   background: #121212;
 }
 
-/* ✅ Chat Header */
+/*  Chat Header */
 .chatHeader {
   background: #3498db;
   color: white;
@@ -51,7 +51,7 @@ body {
   padding: 15px 20px;
 }
 
-/* ✅ Dark Mode Toggle Button */
+/*  Dark Mode Toggle Button */
 .themeToggle {
   background: none;
   border: none;
@@ -60,7 +60,7 @@ body {
   color: white;
 }
 
-/* ✅ Chat Messages */
+/*  Chat Messages */
 .chatMessages {
   flex-grow: 1;
   overflow-y: auto;
@@ -75,7 +75,7 @@ body {
   background: #252525;
 }
 
-/* ✅ Messages */
+/*  Messages */
 .message {
   padding: 8px 12px;
   border-radius: 8px;
@@ -96,7 +96,7 @@ body {
   align-self: flex-start;
 }
 
-/* ✅ Sender's Name */
+/* Sender's Name */
 .message strong {
   color: white;
 }
@@ -105,7 +105,7 @@ body {
   color: #2980b9;
 }
 
-/* ✅ Chat Input Container */
+/*  Chat Input Container */
 .chatInputContainer {
   display: flex;
   padding: 10px;
@@ -118,7 +118,7 @@ body {
   border-top: 1px solid #555;
 }
 
-/* ✅ Input Field */
+/*  Input Field */
 .chatInput {
   flex: 1;
   padding: 10px;
@@ -134,7 +134,7 @@ body {
   border: 1px solid #555;
 }
 
-/* ✅ Send Button */
+/*  Send Button */
 .sendButton {
   background: #2980b9;
   color: white;

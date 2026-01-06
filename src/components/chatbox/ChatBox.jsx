@@ -1,17 +1,16 @@
 import React, { useEffect, useState, useRef } from "react";
 import { io } from "socket.io-client";
 import styles from "./ChatBox.module.css";
+import { useTheme } from "../context/ThemeContext"; // Add import
 
-const socket = io("https://todo-backend-vzcb.onrender.com"); // ✅ Your backend URL
+const socket = io("https://todo-backend-vzcb.onrender.com");
 
 const ChatBox = () => {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
   const [username, setUsername] = useState("");
   const [isUsernameSet, setIsUsernameSet] = useState(false);
-  const [darkMode, setDarkMode] = useState(
-    localStorage.getItem("theme") === "dark"
-  );
+  const { darkMode } = useTheme(); // Use theme context
 
   const messagesEndRef = useRef(null);
 
@@ -36,39 +35,52 @@ const ChatBox = () => {
     }
   };
 
-  const toggleDarkMode = () => {
-    const newTheme = darkMode ? "light" : "dark";
-    localStorage.setItem("theme", newTheme);
-    setDarkMode(!darkMode);
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter") {
+      sendMessage();
+    }
   };
 
-  useEffect(() => {
-    document.body.classList.toggle("dark-theme", darkMode);
-  }, [darkMode]);
-
-  // 👉 Username input UI
   if (!isUsernameSet) {
     return (
-      <div className={`${styles.chatContainer} ${darkMode ? styles.dark : ""}`}>
-        <div className={styles.chatHeader}>
+      <div className={styles.chatContainer} style={{ 
+        background: darkMode ? "var(--bg-dark)" : "var(--bg-light)",
+        color: darkMode ? "var(--text-light)" : "var(--text-dark)"
+      }}>
+        <div className={styles.chatHeader} style={{ 
+          background: darkMode ? "#1a365d" : "#3498db"
+        }}>
           Enter Your Name
-          <button className={styles.themeToggle} onClick={toggleDarkMode}>
-            {darkMode ? "🌙" : "☀️"}
-          </button>
         </div>
-        <div className={styles.chatInputContainer}>
+        <div className={styles.chatInputContainer} style={{ 
+          background: darkMode ? "#2a2a2a" : "white",
+          borderTop: darkMode ? "1px solid #555" : "1px solid #ccc"
+        }}>
           <input
             type="text"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
             placeholder="Your name"
             className={styles.chatInput}
+            style={{ 
+              background: darkMode ? "#333" : "white",
+              color: darkMode ? "white" : "#333",
+              border: darkMode ? "1px solid #555" : "1px solid #ccc"
+            }}
+            onKeyPress={(e) => {
+              if (e.key === "Enter" && username.trim() !== "") {
+                setIsUsernameSet(true);
+              }
+            }}
           />
           <button
             onClick={() => {
               if (username.trim() !== "") setIsUsernameSet(true);
             }}
             className={styles.sendButton}
+            style={{ 
+              background: darkMode ? "#1e88e5" : "#2980b9"
+            }}
           >
             Start Chat
           </button>
@@ -78,15 +90,19 @@ const ChatBox = () => {
   }
 
   return (
-    <div className={`${styles.chatContainer} ${darkMode ? styles.dark : ""}`}>
-      <div className={styles.chatHeader}>
+    <div className={styles.chatContainer} style={{ 
+      background: darkMode ? "var(--bg-dark)" : "var(--bg-light)",
+      color: darkMode ? "var(--text-light)" : "var(--text-dark)"
+    }}>
+      <div className={styles.chatHeader} style={{ 
+        background: darkMode ? "#1a365d" : "#3498db"
+      }}>
         Chat as <strong>{username}</strong>
-        <button className={styles.themeToggle} onClick={toggleDarkMode}>
-          {darkMode ? "🌙" : "☀️"}
-        </button>
       </div>
 
-      <div className={styles.chatMessages}>
+      <div className={styles.chatMessages} style={{ 
+        background: darkMode ? "#252525" : "#f9f9f9"
+      }}>
         {messages.map((msg, index) => (
           <div
             key={index}
@@ -100,15 +116,30 @@ const ChatBox = () => {
         <div ref={messagesEndRef}></div>
       </div>
 
-      <div className={styles.chatInputContainer}>
+      <div className={styles.chatInputContainer} style={{ 
+        background: darkMode ? "#2a2a2a" : "white",
+        borderTop: darkMode ? "1px solid #555" : "1px solid #ccc"
+      }}>
         <input
           type="text"
           value={input}
           onChange={(e) => setInput(e.target.value)}
+          onKeyPress={handleKeyPress}
           placeholder="Type a message..."
           className={styles.chatInput}
+          style={{ 
+            background: darkMode ? "#333" : "white",
+            color: darkMode ? "white" : "#333",
+            border: darkMode ? "1px solid #555" : "1px solid #ccc"
+          }}
         />
-        <button onClick={sendMessage} className={styles.sendButton}>
+        <button 
+          onClick={sendMessage} 
+          className={styles.sendButton}
+          style={{ 
+            background: darkMode ? "#1e88e5" : "#2980b9"
+          }}
+        >
           Send
         </button>
       </div>

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import styles from './TodoForm.module.css'; // ✅ Correct Import
+import styles from './TodoForm.module.css'; 
+import { MdFormatListBulletedAdd } from 'react-icons/md';
 
 const TodoForm = ({ addTodo }) => {
   const [todoName, setTodoName] = useState('');
@@ -10,7 +11,7 @@ const TodoForm = ({ addTodo }) => {
 
     // Prevent adding empty spaces
     if (!todoName.trim() || !todoDate) {
-      return alert('⚠️ Please fill in both the todo name and date.');
+      return alert('Please fill in both the todo name and date.');
     }
 
     const newTodo = { todoName: todoName.trim(), todoDate };
@@ -41,7 +42,7 @@ const TodoForm = ({ addTodo }) => {
         className={styles.inputField}
       />
       
-      <button type="submit" className={styles.submitButton}>➕ ADD</button>
+      <button type="submit" className={styles.submitButton}><MdFormatListBulletedAdd/>ADD</button>
     </form>
   );
 };

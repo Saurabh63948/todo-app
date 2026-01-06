@@ -1,70 +1,122 @@
 .tableContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 20px;
-  overflow-x: auto; /* ✅ Table ko horizontal scroll dene ke liye */
+  width: 100%;
+  max-width: 1000px;
+  margin: 30px auto;
+  overflow-x: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  background: var(--card-bg);
+  transition: all 0.3s ease;
 }
 
-/* ✅ Table Improvements */
+.emptyState {
+  padding: 40px;
+  text-align: center;
+  color: var(--text);
+  font-size: 1.1rem;
+  opacity: 0.7;
+}
+
 .table {
-  width: 90%;
-  max-width: 1000px; /* ✅ Large screens pe limit */
+  width: 100%;
   border-collapse: collapse;
-  background-color: #ffffff;
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-  overflow: hidden;
+  background: var(--card-bg);
+  color: var(--text);
 }
 
-/* ✅ Table Headers */
-th, td {
-  padding: 12px;
-  text-align: left;
-  border-bottom: 1px solid #ddd;
-  transition: background 0.3s ease-in-out; /* ✅ Smooth hover effect */
-}
-
+/* Table Headers */
 th {
-  background-color: #007bff;
+  padding: 18px 16px;
+  text-align: left;
+  background: var(--primary);
   color: white;
-  font-size: 16px;
+  font-weight: 600;
+  font-size: 1rem;
   text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
-/* ✅ Row hover effect */
-tr:hover {
-  background-color: #f8f9fa;
+th:first-child {
+  border-top-left-radius: 12px;
 }
 
-/* ✅ Delete Button Styling */
+th:last-child {
+  border-top-right-radius: 12px;
+}
+
+/* Table Cells */
+td {
+  padding: 16px;
+  border-bottom: 1px solid var(--secondary);
+  font-size: 1rem;
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+/* Hover Effect */
+tbody tr {
+  transition: background 0.2s ease;
+}
+
+tbody tr:hover {
+  background: color-mix(in srgb, var(--primary) 10%, transparent);
+}
+
+/* Delete Button */
 .deleteButton {
-  background-color: #dc3545;
+  background: #ef4444;
   color: white;
   border: none;
-  padding: 8px 12px;
-  border-radius: 5px;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
   cursor: pointer;
-  transition: background 0.3s ease-in-out;
+  transition: all 0.2s ease;
+  min-width: 80px;
 }
 
 .deleteButton:hover {
-  background-color: #a71d2a;
+  background: #dc2626;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(239, 68, 68, 0.3);
 }
 
-/* ✅ Responsive Design */
+.deleteButton:active {
+  transform: translateY(0);
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
-  .table {
-    width: 100%;
-    font-size: 14px;
+  .tableContainer {
+    margin: 20px 15px;
+    border-radius: 8px;
   }
-
+  
   th, td {
-    padding: 10px;
+    padding: 12px 10px;
+    font-size: 0.9rem;
   }
-
+  
   .deleteButton {
-    padding: 6px 10px;
-    font-size: 12px;
+    padding: 6px 12px;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .table {
+    font-size: 0.85rem;
+  }
+  
+  th, td {
+    padding: 10px 8px;
+  }
+  
+  .deleteButton {
+    padding: 5px 10px;
+    min-width: 70px;
   }
 }
