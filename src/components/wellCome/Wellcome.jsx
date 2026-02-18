@@ -156,7 +156,8 @@ const Welcome = () => {
     },
     {
       title: "FreshlyNow (Android)",
-      description: "",
+      description: "FreshlyNow is a high-performance, ultra-fast grocery delivery platform designed to bring daily essentials to your doorstep in minutes. Leveraging a React Native frontend
+        and Redux Toolkit for lightning-fast state management, the app delivers a frictionless shopping experience.",
       tech: ["React Native", "Expo", "EAS Build"],
       liveUrl: "https://expo.dev/accounts/100rabh_07/projects/freshlynow/builds/f7f77458-134e-4ad8-b617-5d7ab0aa7b72",
       isApk: true,
