@@ -156,7 +156,7 @@ const Welcome = () => {
     },
     {
       title: "FreshlyNow (Android)",
-      description: "A high-performance Quick Commerce (q-commerce) mobile application designed for ultra-fast delivery of groceries and daily essentials. Built with React Native and Redux, it features a seamless "Add to Cart" flow, category-based filtering, and real-time inventory management to bring the store to your doorstep in minutes.",
+      description: "",
       tech: ["React Native", "Expo", "EAS Build"],
       liveUrl: "https://expo.dev/accounts/100rabh_07/projects/freshlynow/builds/f7f77458-134e-4ad8-b617-5d7ab0aa7b72",
       isApk: true,
