@@ -158,7 +158,7 @@ const Welcome = () => {
       title: "FreshlyNow (Android)",
       description: "Food delivery mobile app with real-time order tracking and payment integration.",
       tech: ["React Native", "Expo", "EAS Build"],
-      liveUrl: "https://expo.dev/accounts/100rabh_07/projects/freshlynow/builds/17e6588e-ce72-41a8-a78c-d2f3997997f6",
+      liveUrl: "https://expo.dev/accounts/100rabh_07/projects/freshlynow/builds/f7f77458-134e-4ad8-b617-5d7ab0aa7b72",
       isApk: true,
     },
     {
@@ -417,7 +417,7 @@ const Welcome = () => {
           </button>
 
           <a
-            href="https://expo.dev/accounts/100rabh_07/projects/freshlynow/builds/17e6588e-ce72-41a8-a78c-d2f3997997f6"
+            href="https://expo.dev/accounts/100rabh_07/projects/freshlynow/builds/f7f77458-134e-4ad8-b617-5d7ab0aa7b72"
             target="_blank"
             rel="noopener noreferrer"
             className={styles.apkBtn}
