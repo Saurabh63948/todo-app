@@ -404,18 +404,7 @@ const Welcome = () => {
                   <p className={styles.contactValue}>linkedin.com/in/singh-saurabh07</p>
                 </div>
               </a>
-               <a
-                href="https://linkedin.com/in/singh-saurabh07"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.contactCard}
-              >
-                <span className={styles.contactIcon}>Apk Password</span>
-                <div>
-                  <p className={styles.contactLabel}>saurabh123mahi@gmail.com</p>
-                  <p className={styles.contactValue}>12345</p>
-                </div>
-              </a>
+              
             </div>
           </section>
         </div>
